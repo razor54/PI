@@ -1,0 +1,19 @@
+{{#if @root.user.favourites}}
+<h3>Choose a list to put movie</h3>
+{{#each @root.user.favourites}}
+
+<p></p>
+<div class="row">
+    <div class="col-md-6">
+        <b>{{name}} List</b>
+    </div>
+            <button class="btn default" onclick="add(&quot;{{id_path}}&quot;, &quot;{{../id}}&quot;,&quot;{{../title}}&quot;)" type="submit" data-dismiss="modal"> Add</button>
+            <input type="hidden" name="id" value="{{../id}}">
+            <input type="hidden" name="title" value="{{../title}}">
+    <p></p>
+</div>
+{{/each}} {{else}}
+<p></p>
+<h3>Please, create a list first</h3>
+<a href="/">Go to the homepage</a>
+{{/if}}

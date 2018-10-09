@@ -1,0 +1,41 @@
+{{#each answer}}
+<li class="clearfix">
+    <img src="/images/avatar.png" class="avatar" alt="">
+    <div class="post-comments">
+        <p class="meta">
+            <a href="#">{{username}}</a> says :
+            <i class="pull-right">
+                <button class="form-control btn btn-login" onclick="reply(&quot;{{cId}}&quot;)">
+                    <small>Reply</small>
+                </button>
+            </i>
+        </p>
+        <p>
+            {{text}}
+        </p>
+
+        <div id="{{cId}}" style="display:none;">
+
+            <form method='post' action="/movie/{{@root.movieId}}/comment/{{@root._id}}/{{cId}}" />
+
+            <input type="hidden" name="id" value="{{id}}">
+            <input type="hidden" name="title" value="{{title}}">
+
+            <textarea class="form-control" name='comment' id='comment' placeholder="Add your commentary HEHERERERE" rows=2></textarea>
+
+
+            <button class="btn btn-primary" type="submit">
+                Submit</button>
+
+            </form>
+        </div>
+
+    </div>
+    {{#if answer}}
+    <ul class="comments">
+        {{>answers}}
+
+    </ul>
+    {{/if}}
+</li>
+{{/each}}

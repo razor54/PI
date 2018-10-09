@@ -1,0 +1,43 @@
+<ul>
+    {{#if profile_image}}
+    <li>
+        <img src='https://image.tmdb.org/t/p/w500{{profile_image}}' class="rounded mx-auto d-block" />
+    </li>
+    {{/if}}
+    <li>Name: {{name}}</li>
+    <li>Birth Day: {{birthday}}</li>
+    <li>Gender: {{gender}}</li>
+    <li>Biography: {{biography}}</li>
+
+    <p></p>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Character</th>
+                <th>Position</th>
+
+            </tr>
+        </thead>
+        {{#each roles}}
+        <tr>
+            <td>{{character}}</td>
+            <td>{{id}}</td>
+        </tr>
+        {{/each}}
+    </table>
+
+    <h1>Movie Participations</h1>
+
+    <table class="table">
+        {{#each roles}}
+        <tr>
+            <td>
+                <a href='../movies/{{id}}'>
+                    {{title}}
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</ul>

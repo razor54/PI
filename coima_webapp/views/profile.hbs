@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>User Profile</h4>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+          <img alt="User Pic" src="/images/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
+
+
+        </div>
+        <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+          <div class="container">
+            <h2>{{name}}</h2>
+            <p>username
+              <b> {{username}}</b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{#each comments}}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>{{movieTitle}}</h3>
+      </div>
+      <!-- /col-sm-12 -->
+    </div>
+    <!-- /row -->
+    <div class="row">
+      <div class="col-sm-1">
+        <div class="thumbnail">
+          <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+        </div>
+        <!-- /thumbnail -->
+      </div>
+      <!-- /col-sm-1 -->
+
+      <div class="col-sm-5">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <strong>{{username}}</strong>
+            <span class="text-muted">
+              <a href="/movies/{{movieId}}">{{movieTitle}}</a>
+            </span>
+          </div>
+          <div class="panel-body">
+            {{text}}
+          </div>
+          <!-- /panel-body -->
+        </div>
+        <!-- /panel panel-default -->
+      </div>
+      <!-- /col-sm-5 -->
+      {{/each}}

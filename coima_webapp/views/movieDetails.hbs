@@ -1,0 +1,76 @@
+<ul>
+
+    {{#if username}}
+    <form method="POST" action="/favourites">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <span style="font-size:100%;color:black;"> Add </span>
+
+        </button>
+        <input type="hidden" name="id" value="{{id}}">
+        <input type="hidden" name="title" value="{{title}}">
+    </form>
+    {{/if}}
+
+    <li>
+        Title: {{title}}
+    </li>
+
+    <li>
+        <img src='https://image.tmdb.org/t/p/w500{{poster}}' class="rounded mx-auto d-block" alt="Responsive Image" max-width : 100%
+            height=a uto/>
+    </li>
+
+    <li>
+        Director: {{director}}
+    </li>
+
+
+    <li>Actors:
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Character</th>
+                </tr>
+            </thead>
+            {{#each actors}}
+            <tr>
+                <td>
+                    <a href='../actors/{{id}}'>
+                        {{name}}
+                    </a>
+                </td>
+
+                <td>
+                    {{character}}
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </li>
+</ul>
+
+<div class="well well-sm pre-scrollable" onscroll="loadComments(&quot;{{title}}&quot;,{{id}})">
+
+    <div id="commentsHere">
+
+    </div>
+
+    <form method='post' action="/movie/{{id}}/comment" />
+
+    <input type="hidden" name="id" value="{{id}}">
+    <input type="hidden" name="title" value="{{title}}">
+
+    <textarea class="form-control" name='comment' id='comment' placeholder="Add your commentary HEHERERERE" rows=15></textarea>
+
+
+    <h1 />
+    
+    <button class="btn btn-primary" type="submit">
+        Submit</button>
+
+    </form>
+    
+    <h1 />
+
+</div>

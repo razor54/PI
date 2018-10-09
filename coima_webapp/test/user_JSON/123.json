@@ -1,0 +1,14 @@
+{
+  "_id": "123",
+  "name": "myFavsTest",
+  "movies": [
+    {
+      "id": "315635",
+      "title": "Spider-Man: Homecoming"
+    },
+    {
+      "id": "176",
+      "title": "Saw"
+    }
+  ],"user":"user"
+}
